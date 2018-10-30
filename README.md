@@ -1,6 +1,6 @@
 # Reactive CMS
 
-As everyone knows each and every developer have to write his/her own CMS system. That's mine! 
+As everyone knows each and every developer has to write his/her own CMS system. That's mine! 
 
 ## Built With
 
