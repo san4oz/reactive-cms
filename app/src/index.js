@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import HelloWorld from "./frontend/HelloWorld";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
 
-const wrapper = document.getElementById("root");
-wrapper ? ReactDOM.render(<HelloWorld />, wrapper) : false;
+ReactDOM.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+    document.getElementById("root")
+);
