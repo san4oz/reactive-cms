@@ -6,7 +6,7 @@ const Sidebar = () => (
         <nav>
             <ul>
                 <li>
-                    <Link to="/pages">Pages</Link>
+                    <Link to="/admin/pages">Pages</Link>
                 </li>                       
             </ul>
         </nav>
