@@ -1,6 +1,7 @@
-import { REQUEST_POSTS, RECEIVE_POSTS } from "../actions/action-types";
+import { combineReducers } from "redux";
+import { RECEIVE_POSTS, RECEIVE_POST_BY_ID } from "../actions/action-types";
 
-const posts = (state = [], action) => {
+const list = (state = [], action) => {
     switch(action.type){
         case RECEIVE_POSTS:
             return action.payload.posts;
@@ -9,4 +10,16 @@ const posts = (state = [], action) => {
     }
 }
 
-export default posts;
+const editing = (state = {}, action) => {
+    switch(action.type){
+        case RECEIVE_POST_BY_ID:
+            return action.payload.post;
+        default:
+            return state;
+    }
+};
+
+export default combineReducers({
+    list,
+    editing
+});

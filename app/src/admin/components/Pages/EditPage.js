@@ -1,8 +1,8 @@
 import React from "react";
-import {Create} from "../Shared/InternalPages/CRUD";
+import {Create, Update} from "../Shared/InternalPages/CRUD";
 import Form from "../Shared/Form";
 
-const CreatePage = () => {
+const EditPage = ({item}) => {
     const properties = [
         {
             name: 'Title',
@@ -19,8 +19,8 @@ const CreatePage = () => {
     ];
 
     return (
-        <Form title='Create new page' item={{}} properties={properties} />
+        <Form title='Edit page' item={item} properties={properties} />
     )
 };
 
-export default (props) => Create(<CreatePage {...props} />, 'pages');
+export default (props) => Update(<EditPage {...props} />, 'pages');

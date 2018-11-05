@@ -9,8 +9,10 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import LandingPage from "./Landing";
 import CreatePage from "./Pages/CreatePage";
+import EditPageContainer from "../containers/Pages/EditPageContainer";
 import configureStore from "../store/configureStore";
 import PageListContainer from "../containers/Pages/PageListContainer";
+import Loader from "./Shared/Loader";
 
 const store = configureStore();
 
@@ -24,6 +26,7 @@ const Admin = () => (
                     <Route path="/admin" exact component={LandingPage} />
                     <Route path="/admin/pages" exact component={PageListContainer} />
                     <Route path="/admin/pages/new" exact component={CreatePage} />
+                    <Route path="/admin/pages/:id" exact component={EditPageContainer} />
                 </Switch>
             </main>
         </div>

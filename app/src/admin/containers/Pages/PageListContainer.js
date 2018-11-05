@@ -22,7 +22,7 @@ class PageListContainer extends React.Component{
 
 const mapStateToProps = state => {
     return {
-        pages: state.Posts
+        pages: state.Posts.list
     };
 };
 

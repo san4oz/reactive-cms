@@ -1,12 +1,12 @@
 import React from "react";
-import InternalPage from "./InternalPage";
+import InternalPageContainer from "../../../containers/InternalPageContainer";
 import Action from "./Action";
 
 export const Create = (component, entityName) =>
-    InternalPage(component, [ <Action key={1} url={`/admin/${entityName}/save`} icon="save" /> ]);
+    <InternalPageContainer component={component} actions={[<Action key={1} url={`/admin/${entityName}/save`} icon="save" />]} />
 
 export const Update = (component, entityName) =>
-    InternalPage(component, [ <Action key={1} url={`/admin/${entityName}/update`} icon="save" /> ]);
+    <InternalPageContainer component={component} actions={[<Action key={1} url={`/admin/${entityName}/update`} icon="save" />]} />
 
 export const List = (component, entityName) =>
-    InternalPage(component, [ <Action key={1} url={`/admin/${entityName}/new`} icon="plus-square" /> ]);
+    <InternalPageContainer component={component} actions={[<Action key={1} url={`/admin/${entityName}/new`} icon="plus-square" />]} />
