@@ -8,7 +8,7 @@ const PageList = ({pages}) => (
     <React.Fragment>
         {            
             pages ? 
-            <Table properties={['Title', 'Url']} items={pages} /> :
+            <Table title='Pages' properties={['Title', 'Url']} items={pages} /> :
             <NoItemsFoundMessage text="No items found." />
         }
     </React.Fragment>

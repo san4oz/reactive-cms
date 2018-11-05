@@ -1,7 +1,8 @@
 import React from "react";
 
-const Table = ({properties, items}) => (
+const Table = ({title, properties, items}) => (
     <table>
+        <caption>{title}</caption>
         <thead>
             <tr>
                 {properties.map(property => (
