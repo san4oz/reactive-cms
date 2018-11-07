@@ -1,7 +1,7 @@
 export const REQUEST_DATA = "REQUEST_DATA";
 export const RECEIVE_DATA = "RECEIVE_DATA";
 
-export const RECEIVE_POSTS = "RECEIVE_POSTS";
-export const RECEIVE_POST_BY_ID = "RECEIVE_POST_BY_ID";
+export const RECEIVE_SITE_PAGES = "RECEIVE_SITE_PAGES";
+export const RECEIVE_SITE_PAGE = "RECEIVE_SITE_PAGE";
 
-export const EDIT_POST = "EDIT_POST";
+export const EDIT_SITE_PAGE = "EDIT_SITE_PAGE";

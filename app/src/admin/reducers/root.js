@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import Posts from "./postsReducer";
-import Screen from "./screenReducer";
+import SitePages from "./site-pages";
+import Screen from "./screen";
 
 export default combineReducers({
-    Posts,
+    SitePages,
     Screen
 });

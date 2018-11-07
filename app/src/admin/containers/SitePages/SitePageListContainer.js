@@ -1,31 +1,31 @@
 import React from "react";
 import { connect } from "react-redux";
-import  PageList  from '../../components/Pages/PageList/PageList';
-import { fetchPosts } from "../../actions/posts";
+import  SitePages  from '../../components/SitePages/SitePages';
+import { fetchSitePages } from "../../actions/site-pages";
 
-class PageListContainer extends React.Component{
+class SitePagesContainer extends React.Component{
     constructor(props){
         super(props);
     }
 
     componentDidMount(){
         const { dispatch } = this.props;
-        dispatch(fetchPosts());
+        dispatch(fetchSitePages());
     }
 
     render(){
         return (
-            <PageList {...this.props} />
+            <SitePages {...this.props} />
         );
     }
 }
 
 const mapStateToProps = state => {
     return {
-        pages: state.Posts.list
+        pages: state.SitePages.list
     };
 };
 
 export default connect(
     mapStateToProps
-)(PageListContainer);
+)(SitePagesContainer);

@@ -1,18 +1,14 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { createStore, applyMiddleware } from "redux";
-import thunk from 'redux-thunk';
 import { Provider } from "react-redux";
-import Reducer from "../reducers/rootReducer";
 import "../index.scss";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import LandingPage from "./Landing";
-import CreatePage from "./Pages/CreatePage";
-import EditPageContainer from "../containers/Pages/EditPageContainer";
+import CreateSitePage from "./SitePages/CreateSitePage";
+import EditSitePageContainer from "../containers/SitePages/EditSitePageContainer";
 import configureStore from "../store/configureStore";
-import PageListContainer from "../containers/Pages/PageListContainer";
-import Loader from "./Shared/Loader";
+import SitePageListContainer from "../containers/SitePages/SitePageListContainer";
 
 const store = configureStore();
 
@@ -24,9 +20,9 @@ const Admin = () => (
             <main>
                 <Switch>
                     <Route path="/admin" exact component={LandingPage} />
-                    <Route path="/admin/pages" exact component={PageListContainer} />
-                    <Route path="/admin/pages/new" exact component={CreatePage} />
-                    <Route path="/admin/pages/:id" exact component={EditPageContainer} />
+                    <Route path="/admin/pages" exact component={SitePageListContainer} />
+                    <Route path="/admin/pages/new" exact component={CreateSitePage} />
+                    <Route path="/admin/pages/:id" exact component={EditSitePageContainer} />
                 </Switch>
             </main>
         </div>

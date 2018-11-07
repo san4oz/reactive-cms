@@ -1,35 +1,35 @@
 import React from "react";
 import { connect } from "react-redux";
-import  EditPage  from '../../components/Pages/EditPage';
-import { fetchPost, fecthEditPost } from "../../actions/posts";
+import  EditSitePage  from '../../components/SitePages/EditSitePage';
+import { updateSitePage, fetchSitePage } from "../../actions/site-pages";
 
-class EditPageContainer extends React.Component{
+class EditSitePageContainer extends React.Component{
     constructor(props){
         super(props);
     }
 
     componentDidMount(){
-        const {match, dispatch} = this.props;
+        const {match} = this.props;
         this.props.onLoad(match.params.id);        
     }
 
     render(){
         return (
-            <EditPage {...this.props} />
+            <EditSitePage {...this.props} />
         );
     }
 }
 
 const mapStateToProps = state => {
     return ({
-        item: state.Posts.editing
+        item: state.SitePages.editing
     });
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        onSubmit: post => dispatch(fecthEditPost(post, ownProps)),
-        onLoad: id => dispatch(fetchPost(id))
+        onSubmit: post => dispatch(updateSitePage(post, ownProps)),
+        onLoad: id => dispatch(fetchSitePage(id))
     };
 }
 
@@ -37,4 +37,4 @@ export default connect
 (
     mapStateToProps,
     mapDispatchToProps
-)(EditPageContainer);
+)(EditSitePageContainer);

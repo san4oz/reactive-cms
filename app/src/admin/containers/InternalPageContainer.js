@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import InternalPage from "../components/Shared/InternalPages/InternalPage";
+import InternalPage from "../components/Shared/InternalPage";
 
 const mapStateToProps = (state) => {
     return {

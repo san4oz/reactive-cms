@@ -2,7 +2,7 @@ import React from "react";
 import InternalPageContainer from "../../containers/InternalPageContainer";
 import Form from "../Shared/Form";
 
-const CreatePage = () => {
+const CreateSitePage = () => {
     const properties = [
         {
             name: 'Title',
@@ -23,4 +23,4 @@ const CreatePage = () => {
     )
 };
 
-export default (props) => <InternalPageContainer component={<CreatePage  {...props}/>} />
+export default (props) => <InternalPageContainer component={<CreateSitePage  {...props}/>} />

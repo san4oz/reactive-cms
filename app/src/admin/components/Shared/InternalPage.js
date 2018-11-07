@@ -1,6 +1,5 @@
 import React from "react";
-import Loader from "../Loader";
-
+import Loader from "./Loader";
 
 const InternalPage = ({component, isLoading}) => {
     const content = !isLoading ?

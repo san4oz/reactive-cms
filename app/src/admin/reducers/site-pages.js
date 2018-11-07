@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import { RECEIVE_POSTS, RECEIVE_POST_BY_ID, EDIT_POST } from "../actions/action-types";
+import { RECEIVE_SITE_PAGES, RECEIVE_SITE_PAGE, EDIT_SITE_PAGE } from "../actions/action-types";
 
 const list = (state = [], action) => {
     switch(action.type){
-        case RECEIVE_POSTS:
-            return action.payload.posts;
+        case RECEIVE_SITE_PAGES:
+            return action.payload.sitePages;
         default:
             return state;
     }
@@ -12,9 +12,9 @@ const list = (state = [], action) => {
 
 const editing = (state = {}, action) => {
     switch(action.type){
-        case RECEIVE_POST_BY_ID:
-            return action.payload.post;
-        case EDIT_POST:
+        case RECEIVE_SITE_PAGE:
+            return action.payload.sitePage;
+        case EDIT_SITE_PAGE:
             return {};
         default:
             return state;
