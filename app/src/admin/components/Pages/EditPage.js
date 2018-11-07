@@ -1,8 +1,8 @@
 import React from "react";
-import {Create, Update} from "../Shared/InternalPages/CRUD";
 import Form from "../Shared/Form";
+import InternalPageContainer from "../../containers/InternalPageContainer";
 
-const EditPage = ({item}) => {
+const EditPage = (props) => {
     const properties = [
         {
             name: 'Title',
@@ -19,8 +19,8 @@ const EditPage = ({item}) => {
     ];
 
     return (
-        <Form title='Edit page' item={item} properties={properties} />
+        <Form title='Edit page' {...props} properties={properties} />
     )
 };
 
-export default (props) => Update(<EditPage {...props} />, 'pages');
+export default (props) => <InternalPageContainer component={<EditPage  {...props}/>} />

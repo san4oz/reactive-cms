@@ -1,4 +1,4 @@
-import { REQUEST_DATA, RECEIVE_DATA, RECEIVE_POSTS, RECEIVE_POST_BY_ID } from "./action-types";
+import { REQUEST_DATA, RECEIVE_DATA, RECEIVE_POSTS, RECEIVE_POST_BY_ID, EDIT_POST, CHANGE_POST } from "./action-types";
 import API from "../api/API";
 
 const requestData = () => ({
@@ -21,7 +21,11 @@ const receivePostById = (post) => ({
     payload: {
         post
     }
-})
+});
+
+const editPost = () => ({
+    type: EDIT_POST
+});
 
 export const fetchPosts = () => (dispatch) => {
     dispatch(requestData());
@@ -37,4 +41,13 @@ export const fetchPost = (id) => (dispatch) => {
         dispatch(receivePostById(post));
         dispatch(receiveData());
     });
+}
+
+export const fecthEditPost = (post, ownProps) => (dispatch) => {
+    dispatch(requestData());
+    API.editPost(post, () => {
+        dispatch(editPost());
+        dispatch(receiveData());
+        ownProps.history.push('/admin/pages');
+    })
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import {Create} from "../Shared/InternalPages/CRUD";
+import InternalPageContainer from "../../containers/InternalPageContainer";
 import Form from "../Shared/Form";
 
 const CreatePage = () => {
@@ -23,4 +23,4 @@ const CreatePage = () => {
     )
 };
 
-export default (props) => Create(<CreatePage {...props} />, 'pages');
+export default (props) => <InternalPageContainer component={<CreatePage  {...props}/>} />

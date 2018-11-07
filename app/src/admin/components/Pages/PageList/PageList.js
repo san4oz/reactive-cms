@@ -1,7 +1,7 @@
 import React from "react";
 import Table from "../../Shared/NavigationTable";
 import NoItemsFoundMessage from "../../Shared/NoItemsFoundMessage";
-import { List } from "../../Shared/InternalPages/CRUD";
+import InternalPageContainer from "../../../containers/InternalPageContainer";
 
 const entityName= 'pages';
 
@@ -15,4 +15,4 @@ const PageList = ({pages}) => (
     </React.Fragment>
 );
 
-export default (props) => List(<PageList {...props} />, 'pages');
+export default (props) => <InternalPageContainer component={<PageList {...props} />} />
