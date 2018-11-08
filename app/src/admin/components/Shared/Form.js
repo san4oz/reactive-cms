@@ -1,4 +1,14 @@
 import React from "react";
+// Require Editor JS files.
+import 'froala-editor/js/froala_editor.pkgd.min.js';
+
+// Require Editor CSS files.
+import 'froala-editor/css/froala_style.min.css';
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+
+// Require Font Awesome.
+import 'font-awesome/css/font-awesome.css';
+import FroalaEditor from 'react-froala-wysiwyg';
 
 class Form extends React.Component {
     constructor(props) {
@@ -35,7 +45,7 @@ class Form extends React.Component {
 
 const elementsByPropertyType = {
     'text': (props) => <input type='text' {...props}/>,
-    'content': (props) => <textarea {...props}></textarea>
+    'content': ({name, value, onChange}) => <FroalaEditor name={name} onModelChange={onChange} model={value} tag='textarea'/>
 }
 
 const createProperty = (property, value, onChange) => (

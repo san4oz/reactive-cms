@@ -11,7 +11,8 @@ const SitePages = ({pages}) => {
 
     const items = pages.map(page => ({
         title: page.Title,
-        url: `${entityName}/${page.Id}`
+        url: `${entityName}/${page.Id}`,
+        id: page.Id
     }));
 
     return (    
