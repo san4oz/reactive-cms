@@ -1,4 +1,4 @@
-import { REQUEST_DATA, RECEIVE_DATA, RECEIVE_SITE_PAGES, RECEIVE_SITE_PAGE, EDIT_SITE_PAGE } from "./action-types";
+import { REQUEST_DATA, RECEIVE_DATA, RECEIVE_SITE_PAGES, RECEIVE_SITE_PAGE, EDIT_SITE_PAGE, CREATE_SITE_PAGE } from "./action-types";
 import API from "../api/API";
 
 const requestData = () => ({
@@ -27,6 +27,10 @@ const editSitePage = () => ({
     type: EDIT_SITE_PAGE
 });
 
+const newSitePage = () => ({
+    type: CREATE_SITE_PAGE
+});
+
 export const fetchSitePages = () => (dispatch) => {
     dispatch(requestData());
     API.getSitePages(sitePages => {
@@ -47,6 +51,15 @@ export const updateSitePage = (sitePage, ownProps) => (dispatch) => {
     dispatch(requestData());
     API.editSitePage(sitePage, () => {
         dispatch(editSitePage());
+        dispatch(receiveData());
+        ownProps.history.push('/admin/pages');
+    })
+}
+
+export const createSitePage = (sitePage, ownProps) => (dispatch) => {
+    dispatch(requestData());
+    API.createSitePage(sitePage, () => {
+        dispatch(newSitePage());
         dispatch(receiveData());
         ownProps.history.push('/admin/pages');
     })

@@ -5,10 +5,10 @@ import "../index.scss";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import LandingPage from "./Landing";
-import CreateSitePage from "./SitePages/CreateSitePage";
-import EditSitePageContainer from "../containers/SitePages/EditSitePageContainer";
+import CreateSitePage from "../containers/SitePages/CreateSitePageContainer";
+import EditSitePage from "../containers/SitePages/EditSitePageContainer";
+import SitePages from "../containers/SitePages/SitePagesContainer";
 import configureStore from "../store/configureStore";
-import SitePageListContainer from "../containers/SitePages/SitePageListContainer";
 
 const store = configureStore();
 
@@ -20,9 +20,9 @@ const Admin = () => (
             <main>
                 <Switch>
                     <Route path="/admin" exact component={LandingPage} />
-                    <Route path="/admin/pages" exact component={SitePageListContainer} />
+                    <Route path="/admin/pages" exact component={SitePages} />
                     <Route path="/admin/pages/new" exact component={CreateSitePage} />
-                    <Route path="/admin/pages/:id" exact component={EditSitePageContainer} />
+                    <Route path="/admin/pages/:id" exact component={EditSitePage} />
                 </Switch>
             </main>
         </div>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => (
     <header>
         <section className="logo">
-            <a href="/admin">Reactive CMS</a>
+        <Link to='/admin'>Reactive CMS</Link>
         </section>
         <nav>
             <ul>

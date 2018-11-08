@@ -8,13 +8,14 @@
                          "sidebar content";
 
     *{
+        a{
+            text-decoration: none;
+            color: #000000;
+        }
+
         ul{
             text-decoration: none;
             list-style: none;
-
-            a{
-                text-decoration: none;
-            }
         }
     }
     
@@ -68,14 +69,44 @@
 
     > aside{
        grid-area: sidebar; 
+       
+      
 
        ul{
-            font-size: 1.5em;
             padding: 0;
 
-            li{
+            li{            
                 margin-bottom: 10px;
                 text-align: center;
+
+                > div{
+                    display: grid;
+                    grid-template-columns: 1fr 20%;
+                    grid-template-rows: 100%;
+                    grid-template-areas: "link action";
+                
+                    .navigation-link{
+                        grid-area: link; 
+                        flex-grow: 1;
+                        font-size: 2.5vh;
+                        display: flex;
+                        align-items: center;
+
+                        i{
+                            margin: 0 20px;
+                        }
+
+                        &.active{
+                            color: black;
+                        }
+                    }
+
+                    .add-new-link{
+                       grid-area: action;
+                       display: flex;
+                       align-self: center;
+                    }
+                }
             }
 
             a{
@@ -120,12 +151,38 @@
         }
 
         .no-items-message{
-            display: flex;
-            height: 100%;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
             color: #4a5568;
+            font-size: 3vh;
+            padding: 25px;
+
+            .far{
+                font-size: 10vh;
+            }
+            
+            h3{
+                margin-bottom: 10px;
+            }
+
+            a,
+            div{
+                font-size: 2vh;
+            }
+
+            a{
+                display: block;
+                width: 20%;
+                height: 25px;
+                background: #4a5568;
+                padding: 10px;
+                text-align: center;
+                border-radius: 5px;
+                color: white;
+                font-weight: bold;
+                margin: 30px auto;
+            }
         }
 
         .landing-page{
@@ -234,6 +291,29 @@
                     font-size: .85em;
                     letter-spacing: .1em;
                     text-transform: uppercase;
+                }
+            }
+
+            .list{
+                width: 50%;
+                display: flex;
+                margin: 0 auto;
+                margin-top: 50px;
+                flex-wrap: wrap;
+                flex-direction: column;
+
+                .item{
+                    display: flex;
+                    padding: 10px 20px;
+                    margin: 10px;
+                    background-color: #ffffff;
+                    height: 50px;
+                    align-items: center;
+                    box-shadow: 0 0 0 1px rgba(200,215,225,0.5), 0 1px 2px #e9eff3;
+
+                    .content{
+                        flex-grow: 1;
+                    }
                 }
             }
 
