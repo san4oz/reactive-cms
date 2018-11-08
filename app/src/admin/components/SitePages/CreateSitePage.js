@@ -2,7 +2,7 @@ import React from "react";
 import InternalPageContainer from "../../containers/InternalPageContainer";
 import Form from "../Shared/Form";
 
-const CreateSitePage = () => {
+const CreateSitePage = ({onSubmit}) => {
     const properties = [
         {
             name: 'Title',
@@ -19,7 +19,7 @@ const CreateSitePage = () => {
     ];
 
     return (
-        <Form title='Create new page' item={{}} properties={properties} />
+        <Form title='Create new page' onSubmit={onSubmit} item={{}} properties={properties} />
     )
 };
 
